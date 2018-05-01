@@ -27,4 +27,9 @@ class TestStringCalculator {
 	void testMulti1() throws Exception {
 		assertEquals(StringCalculator.add("1,2,3,4,5"), 15);
 	}
+	
+	@Test
+	void tesLine1() throws Exception {
+		assertEquals(StringCalculator.add("1\n2,3"), 6);
+	}
 }
