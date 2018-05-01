@@ -6,7 +6,6 @@ public class StringCalculator {
 	private static String delimit;
 	
 	public static int add(String string) {
-		delimit = ",|\n";
 		if (isEmpty(string))
 			return 0;
 		else
@@ -25,11 +24,9 @@ public class StringCalculator {
 		String[] parts = string.split(delimit);
 		int sum = 0;
 		for (int index = 0 ; index < parts.length ; index++) {
-			System.out.println(toInt(parts[index]));
 			if (toInt(parts[index]) < 1000) 
 				sum += toInt(parts[index]);
 		}	
-		System.out.println(sum);
 		return sum;
 	}
 	
@@ -39,8 +36,10 @@ public class StringCalculator {
 			delimit = parts[0].substring(2);
 			return split(parts[1]);
 		}			
-		else 
+		else {
+			delimit = ",|\n";
 			return split(string);
+		}
 	}
 		
 }
