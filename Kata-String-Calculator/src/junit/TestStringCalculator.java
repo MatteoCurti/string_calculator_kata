@@ -24,12 +24,12 @@ class TestStringCalculator {
 	}
 
 	@Test
-	void testMulti1() throws Exception {
+	void testMultiNumber() throws Exception {
 		assertEquals(StringCalculator.add("1,2,3,4,5"), 15);
 	}
 	
 	@Test
-	void tesLine1() throws Exception {
+	void testDoubleDelimit() throws Exception {
 		assertEquals(StringCalculator.add("1\n2,3"), 6);
 	}
 }

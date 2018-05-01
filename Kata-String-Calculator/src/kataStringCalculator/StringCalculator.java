@@ -1,17 +1,15 @@
 package kataStringCalculator;
 
+
 public class StringCalculator {
 
-	private static String delimit = ",";
+	private static String delimit = ",|\n";
 	
 	public static int add(String string) {
 		if (isEmpty(string))
 			return 0;
-		if (string.contains(delimit)) {
-			return split(string);
-		}
 		else 
-			return toInt(string);
+			return split(string);
 	}
 	
 	private static boolean isEmpty(String string) {
@@ -28,6 +26,7 @@ public class StringCalculator {
 		for (int index = 0 ; index < parts.length ; index++)
 			sum += toInt(parts[index]);
 		return sum;
+
 	}
 	
 	
