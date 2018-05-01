@@ -24,7 +24,10 @@ public class StringCalculator {
 	
 	private static int split(String string) {
 		String[] parts = string.split(delimit);
-		return toInt(parts[0]) + toInt(parts[1]);
+		int sum = 0;
+		for (int index = 0 ; index < parts.length ; index++)
+			sum += toInt(parts[index]);
+		return sum;
 	}
 	
 	
