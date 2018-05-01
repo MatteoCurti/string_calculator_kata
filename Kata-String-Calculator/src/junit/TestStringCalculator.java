@@ -13,4 +13,8 @@ class TestStringCalculator {
 		assertEquals(StringCalculator.add(""), 0);
 	}
 
+	@Test
+	void testOneNumber() {
+		assertEquals(StringCalculator.add("1"), 1);
+	}
 }
