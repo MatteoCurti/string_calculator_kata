@@ -8,14 +8,8 @@ public class StringCalculator {
 	public static int add(String string) {
 		if (isEmpty(string))
 			return 0;
-		if (string.startsWith("//")) {
-			String[] parts = string.split("\n");
-			delimit = parts[0].substring(2);
-			System.out.println(delimit);
-			return split(parts[1]);
-		}			
-		else 
-			return split(string);
+		else
+			return parse(string);
 	}
 	
 	private static boolean isEmpty(String string) {
@@ -32,6 +26,16 @@ public class StringCalculator {
 		for (int index = 0 ; index < parts.length ; index++)
 			sum += toInt(parts[index]);
 		return sum;
+	}
+	
+	private static int parse(String string) {
+		if (string.startsWith("//")) {
+			String[] parts = string.split("\n");
+			delimit = parts[0].substring(2);
+			return split(parts[1]);
+		}			
+		else 
+			return split(string);
 	}
 		
 }
