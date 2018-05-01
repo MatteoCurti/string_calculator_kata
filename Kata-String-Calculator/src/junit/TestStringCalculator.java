@@ -32,4 +32,9 @@ class TestStringCalculator {
 	void testDoubleDelimit() throws Exception {
 		assertEquals(StringCalculator.add("1\n2,3"), 6);
 	}
+	
+	@Test
+	void testDynamicDelimit() throws Exception {
+		assertEquals(StringCalculator.add("//;\n1;2"), 3);
+	}
 }
