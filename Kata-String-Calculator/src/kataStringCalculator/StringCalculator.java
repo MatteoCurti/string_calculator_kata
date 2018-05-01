@@ -5,7 +5,11 @@ public class StringCalculator {
 	public static int add(String string) {
 		if (isEmpty(string))
 			return 0;
-		else
+		if (string.contains(",")) {
+			String[] parts = string.split(",");
+			return toInt(parts[0]) + toInt(parts[1]);
+		}
+		else 
 			return toInt(string);
 	}
 	
