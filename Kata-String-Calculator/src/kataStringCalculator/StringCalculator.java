@@ -3,9 +3,10 @@ package kataStringCalculator;
 
 public class StringCalculator {
 
-	private static String delimit = ",|\n";
+	private static String delimit;
 	
 	public static int add(String string) {
+		delimit = ",|\n";
 		if (isEmpty(string))
 			return 0;
 		else
@@ -23,8 +24,12 @@ public class StringCalculator {
 	private static int split(String string) {
 		String[] parts = string.split(delimit);
 		int sum = 0;
-		for (int index = 0 ; index < parts.length ; index++)
-			sum += toInt(parts[index]);
+		for (int index = 0 ; index < parts.length ; index++) {
+			System.out.println(toInt(parts[index]));
+			if (toInt(parts[index]) < 1000) 
+				sum += toInt(parts[index]);
+		}	
+		System.out.println(sum);
 		return sum;
 	}
 	
