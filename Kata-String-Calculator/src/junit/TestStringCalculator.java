@@ -37,4 +37,9 @@ class TestStringCalculator {
 	void testDynamicDelimit() throws Exception {
 		assertEquals(StringCalculator.add("//;\n1;2"), 3);
 	}
+	
+	@Test
+	void testBigNumber() throws Exception {
+		assertEquals(StringCalculator.add("1000,2"), 2);
+	}
 }
