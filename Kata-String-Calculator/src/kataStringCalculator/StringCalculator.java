@@ -3,9 +3,10 @@ package kataStringCalculator;
 public class StringCalculator {
 
 	public static int add(String string) {
-		return 0;
+		if (string.isEmpty())
+			return 0;
+		else
+			return Integer.parseInt(string);
 	}
 	
-	
-
 }
